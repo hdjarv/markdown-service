@@ -36,7 +36,7 @@ This software implements a HTTP server that accepts [Markdown](http://daringfire
 
 The input is sent using a HTTP POST request (to path `/markdown`) with the input in the request body. The output is sent back in the response body.
 
-This software uses the [marked](https://www.npmjs.org/package/marked) node.js library to to the markdown to html conversion. Thus the capabilities of the conversion depends on that library. It is used with default options.
+This software uses the [marked](https://www.npmjs.org/package/marked) node.js library to do the markdown to html conversion. Thus the capabilities of the conversion depends on that library. It is used with default options.
 
 ### Example usage
 
