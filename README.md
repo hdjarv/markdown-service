@@ -46,6 +46,12 @@ Here is an example (for Unix-like operating systems using curl) on how to use th
 curl -X POST --data-binary @README.md http://localhost:3000/markdown
 ```
 
+This results in an HTML fragment corresponding to the markdown input. If you like a full HTML page instead, add `?fullHtml` to the URL used.
+
+```sh
+curl -X POST --data-binary @README.md http://localhost:3000/markdown?fullHtml
+```
+
 ## License
 
 This software is licensed under the MIT license, see file LICENSE.

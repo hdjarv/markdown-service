@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict';
+
 var express = require('express');
 var logger = require('morgan');
 
@@ -19,17 +21,17 @@ app.use(bodyContent);
 app.use('/markdown', service);
 
 // catch 404 and forwarding to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handlers
-app.use(function(err, req, res, next) {
-  res.send(err.status || 500, err.message);
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500).send(err.message);
 });
 
-var server = app.listen(app.get('port'), function() {
+var server = app.listen(app.get('port'), function () {
   console.log('Markdown service listening on port ' + server.address().port);
 });
